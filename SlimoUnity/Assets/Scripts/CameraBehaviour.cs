@@ -18,6 +18,7 @@ public class CameraBehaviour : MonoBehaviour {
         flashPosition = player.position;
         flashPosition.y = currentPosition.y;
         flashPosition.z = flashPosition.z - marginZ;
+        
 
         this.transform.position = Vector3.Lerp(currentPosition, flashPosition, freq);
 

@@ -6,6 +6,9 @@ public class InputMaster : MonoBehaviour {
 
     PlayerBehaviour playerBeh;
     Vector2 axis;
+    public MarkerBehaviour marker;
+    
+
 
     private void Start()
     {
@@ -21,10 +24,18 @@ public class InputMaster : MonoBehaviour {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, 100, 8))
+        if (Physics.Raycast(ray, out hit, 100))
+        {
             Debug.DrawLine(ray.origin, hit.point);
+            if(hit.transform.tag == "Floor")
+            {
+                marker.UpdatePosition(hit.point);
+            }
 
-        playerBeh.UpdateDirection(hit.point);
+            
+        }
+
+
 
     }
 }

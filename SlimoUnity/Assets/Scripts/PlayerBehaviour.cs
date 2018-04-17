@@ -6,6 +6,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     Vector2 axis;
     Rigidbody rb;
+    [SerializeField]GameObject pointer;
 
     public float speed;
 
@@ -18,8 +19,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        this.transform.LookAt(pointer.transform.position);
+    }
     void FixedUpdate()
     {
         rb.AddForce(new Vector3(axis.x * Time.deltaTime * speed, 0, axis.y * Time.deltaTime * speed),ForceMode.Impulse);
@@ -32,9 +33,5 @@ public class PlayerBehaviour : MonoBehaviour {
 
     }
 
-    public void UpdateDirection(Vector3 point)
-    {
-        this.transform.LookAt(point);
-    }
 
 }
