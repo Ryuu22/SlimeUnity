@@ -7098,9 +7098,7 @@ The default value is Camera.MonoOrStereoscopicEye.Left, so Camera.MonoOrStereosc
     </member>
     <member name="T:UnityEngine.DeviceType">
       <summary>
-        <para>Enumeration for SystemInfo.deviceType, denotes a coarse grouping of kinds of devices.
-
-Universal Windows Platform: tablets are treated as desktop machines, thus DeviceType.Handheld will only be returned for Windows Phones and IoT family devices.</para>
+        <para>Enumeration for SystemInfo.deviceType, denotes a coarse grouping of kinds of devices.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.DeviceType.Console">
@@ -14998,7 +14996,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="P:UnityEngine.Light.isBaked">
       <summary>
-        <para>Is the light contribution already stored in lightmaps and/or lightprobes (Read Only).</para>
+        <para>Is the light contribution already stored in lightmaps and/or lightprobes (Read Only). Obsolete; replaced by Light-lightmapBakeType.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Light.lightmapBakeType">
@@ -21462,7 +21460,7 @@ The block is specified by its x,y offset in the texture and by its width and hei
     </member>
     <member name="P:UnityEngine.Profiling.Profiler.enableBinaryLog">
       <summary>
-        <para>Sets profiler output file in built players.</para>
+        <para>Enables the logging of profiling data to a file.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Profiling.Profiler.enabled">
@@ -21472,7 +21470,7 @@ The block is specified by its x,y offset in the texture and by its width and hei
     </member>
     <member name="P:UnityEngine.Profiling.Profiler.logFile">
       <summary>
-        <para>Sets profiler output file in built players.</para>
+        <para>Specifies the file to use when writing profiling data.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Profiling.Profiler.maxNumberOfSamplesPerFrame">
@@ -27604,9 +27602,9 @@ A scene may be invalid if, for example, you tried to open a scene that does not 
     </member>
     <member name="?:UnityEngine.SceneManagement.SceneManager.activeSceneChanged(UnityEngine.Events.UnityAction`2&lt;UnityEngine.SceneManagement.Scene,UnityEngine.SceneManagement.Scene&gt;)">
       <summary>
-        <para>Add a delegate to this to get notifications when the active Scene has changed</para>
+        <para>Subscribe to this event to get notified when the active Scene has changed.</para>
       </summary>
-      <param name="value"></param>
+      <param name="value">Previous active scene and the new active scene.</param>
     </member>
     <member name="P:UnityEngine.SceneManagement.SceneManager.sceneCount">
       <summary>

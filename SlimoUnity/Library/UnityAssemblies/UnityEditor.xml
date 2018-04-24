@@ -3000,13 +3000,13 @@ Transitions with exit times greater than one will be evaluated only once, so the
     </member>
     <member name="M:UnityEditor.AssetDatabase.LoadAllAssetRepresentationsAtPath(System.String)">
       <summary>
-        <para>Returns all asset representations at assetPath.</para>
+        <para>Returns all sub Assets at assetPath.</para>
       </summary>
       <param name="assetPath"></param>
     </member>
     <member name="M:UnityEditor.AssetDatabase.LoadAllAssetsAtPath(System.String)">
       <summary>
-        <para>Returns an array of all asset objects at assetPath.</para>
+        <para>Returns an array of all Assets at assetPath.</para>
       </summary>
       <param name="assetPath">Filesystem path to the asset.</param>
     </member>
@@ -3028,7 +3028,7 @@ Transitions with exit times greater than one will be evaluated only once, so the
     </member>
     <member name="M:UnityEditor.AssetDatabase.MoveAsset(System.String,System.String)">
       <summary>
-        <para>Move an asset file from one folder to another.</para>
+        <para>Move an asset file (or folder) from one folder to another.</para>
       </summary>
       <param name="oldPath">The path where the asset currently resides.</param>
       <param name="newPath">The path which the asset should be moved to.</param>
@@ -25145,16 +25145,16 @@ See Also: PauseState, EditorApplication.playModeStateChanged, EditorApplication.
       <summary>
         <para>Creates a prefab from a game object hierarchy.</para>
       </summary>
-      <param name="path"></param>
-      <param name="go"></param>
+      <param name="path">The path where the prefab is saved.</param>
+      <param name="go">The GameObject that you want to create a prefab from.</param>
       <param name="options"></param>
     </member>
     <member name="M:UnityEditor.PrefabUtility.CreatePrefab(System.String,UnityEngine.GameObject,UnityEditor.ReplacePrefabOptions)">
       <summary>
         <para>Creates a prefab from a game object hierarchy.</para>
       </summary>
-      <param name="path"></param>
-      <param name="go"></param>
+      <param name="path">The path where the prefab is saved.</param>
+      <param name="go">The GameObject that you want to create a prefab from.</param>
       <param name="options"></param>
     </member>
     <member name="M:UnityEditor.PrefabUtility.DisconnectPrefabInstance(UnityEngine.Object)">

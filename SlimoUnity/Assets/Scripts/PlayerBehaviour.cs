@@ -7,6 +7,11 @@ public class PlayerBehaviour : MonoBehaviour {
     Vector2 axis;
     Rigidbody rb;
     [SerializeField]GameObject pointer;
+    public Animator anim;
+
+    public float savedEnergy;
+    public bool savingEnergy;
+    public float energyMultiplier;
 
     public float speed;
 
@@ -20,6 +25,18 @@ public class PlayerBehaviour : MonoBehaviour {
 	void Update ()
     {
         this.transform.LookAt(pointer.transform.position);
+
+        if (savingEnergy && savedEnergy < 1.0f)
+        {
+            savedEnergy += 0.1f;
+        }
+        else if (savingEnergy && savedEnergy > 1.0f)
+        {
+            savedEnergy = 1.0f;
+        }
+
+        anim.SetBool("SavingEnergy", savingEnergy);
+
     }
     void FixedUpdate()
     {
@@ -32,6 +49,18 @@ public class PlayerBehaviour : MonoBehaviour {
         axis = newAxis;
 
     }
-
-
+    public void Attack()
+    {
+        anim.SetTrigger("Attack");
+    }
+    public void JumpStart()
+    {
+        savingEnergy = true;
+    }
+    public void JumpEnd()
+    {
+        savingEnergy = false;
+        rb.AddRelativeForce(Vector3.forward * savedEnergy * energyMultiplier);
+        savedEnergy = 0;
+    }
 }

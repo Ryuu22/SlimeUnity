@@ -21,6 +21,8 @@ public class InputMaster : MonoBehaviour {
 
         playerBeh.Move(axis);
 
+
+    #region Raycasting
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -31,11 +33,27 @@ public class InputMaster : MonoBehaviour {
             {
                 marker.UpdatePosition(hit.point);
             }
-
             
         }
+        #endregion
 
+    #region Attacking
 
+        if(Input.GetButton("Fire1"))
+        {
+            playerBeh.Attack();
+        }
+
+        if(Input.GetButton("Fire2"))
+        {
+            playerBeh.JumpStart();
+        }
+        if(Input.GetButtonUp("Fire2"))
+        {
+            playerBeh.JumpEnd();
+        }
+
+    #endregion
 
     }
 }

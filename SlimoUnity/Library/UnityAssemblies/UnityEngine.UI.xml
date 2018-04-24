@@ -375,7 +375,7 @@
     </member>
     <member name="M:UnityEngine.EventSystems.EventSystem.SetSelectedGameObject(UnityEngine.GameObject,UnityEngine.EventSystems.BaseEventData)">
       <summary>
-        <para>Set the object as selected. Will send an OnDeselect the the old selected object and OnSelect to the new selected object.</para>
+        <para>Set the GameObject as selected. Will send an OnDeselect the the old selected object and OnSelect to the new selected object.</para>
       </summary>
       <param name="selected">GameObject to select.</param>
       <param name="pointer">Associated EventData.</param>
