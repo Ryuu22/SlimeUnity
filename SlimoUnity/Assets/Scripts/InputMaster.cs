@@ -5,14 +5,19 @@ using UnityEngine;
 public class InputMaster : MonoBehaviour {
 
     PlayerBehaviour playerBeh;
+    public SlimeBallBehaviour slimeBall;
     Vector2 axis;
     public MarkerBehaviour marker;
+
+    public bool ShootingMode;
+
     
 
 
     private void Start()
     {
         playerBeh = GetComponent<PlayerBehaviour>();
+        ShootingMode = false;
     }
     void Update ()
     {
@@ -39,19 +44,32 @@ public class InputMaster : MonoBehaviour {
 
     #region Attacking
 
-        if(Input.GetButton("Fire1"))
+        if(Input.GetKeyDown(KeyCode.E))
         {
-            playerBeh.Attack();
+            slimeBall.ComeBack();
+            ShootingMode = !ShootingMode;
         }
 
-        if(Input.GetButton("Fire2"))
+        if(Input.GetButtonDown("Fire1") && !ShootingMode)
+        {
+            playerBeh.Attack();
+
+        }
+        if (Input.GetButtonDown("Fire1") && ShootingMode)
+        {
+            playerBeh.Shoot();
+            ShootingMode = false;
+        }
+
+        if (Input.GetButtonDown("Fire2") && !ShootingMode)
         {
             playerBeh.JumpStart();
         }
-        if(Input.GetButtonUp("Fire2"))
+        if(Input.GetButtonUp("Fire2") && !ShootingMode)
         {
             playerBeh.JumpEnd();
         }
+
 
     #endregion
 

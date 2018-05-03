@@ -15,6 +15,8 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public float speed;
 
+    public SlimeBallBehaviour slimeBall;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -52,7 +54,22 @@ public class PlayerBehaviour : MonoBehaviour {
     public void Attack()
     {
         anim.SetTrigger("Attack");
+        //TODO LOGIC TRIGGER APPEARS
     }
+
+    public void Shoot()
+    {
+        //TODO: ShootingAnimationStarts
+
+        slimeBall.GetShot(this.transform.forward * Vector3.Distance(this.transform.position, pointer.transform.position));
+
+        Debug.Log("Shot");
+    }
+    public void ComeBack()
+    {
+        slimeBall.ComeBack();
+    }
+
     public void JumpStart()
     {
         savingEnergy = true;
