@@ -54,6 +54,7 @@ public class PlayerBehaviour : MonoBehaviour {
     public void Attack()
     {
         anim.SetTrigger("Attack");
+
         //TODO LOGIC TRIGGER APPEARS
     }
 
@@ -63,7 +64,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
         slimeBall.GetShot(this.transform.forward * Vector3.Distance(this.transform.position, pointer.transform.position));
 
-        Debug.Log("Shot");
     }
     public void ComeBack()
     {
