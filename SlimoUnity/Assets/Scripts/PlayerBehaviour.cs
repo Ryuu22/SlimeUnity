@@ -80,4 +80,13 @@ public class PlayerBehaviour : MonoBehaviour {
         rb.AddRelativeForce(Vector3.forward * savedEnergy * energyMultiplier);
         savedEnergy = 0;
     }
+
+    #region Damage Methods
+
+    public void SetDamage(int damage)
+    {
+
+    }
+
+#endregion
 }
