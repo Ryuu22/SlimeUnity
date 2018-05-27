@@ -34,7 +34,6 @@ public class EnemyBehaviour : MonoBehaviour {
     public bool canAttack = false;
     public int hitDamage = 3;
     public float coolDownAttack = 1.0f;
-    public int life = 30;
     public float timeToLive;
 
     [Header("Animation")]
@@ -202,17 +201,11 @@ public class EnemyBehaviour : MonoBehaviour {
 
     #endregion
     #region Public Functions
-    public void SetDamage(int damage)
+    public void SetDamage()
     {
         anim.SetTrigger("GotDamage");
-        life -= damage;
-        if(life <= 0)
-        {
-            SetDead();
-            return;
-
-        }
-        SetStun();
+        SetDead();
+        
     }
 
     #endregion
@@ -220,7 +213,7 @@ public class EnemyBehaviour : MonoBehaviour {
     {
         distanceFromTarget = Vector3.Distance(transform.position, targetTransform.position);
     }
-    void OnDrawGizmos()
+    /*void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
@@ -229,7 +222,7 @@ public class EnemyBehaviour : MonoBehaviour {
         newColor.a = 0.2f;
         Gizmos.color = newColor;
         Gizmos.DrawSphere(transform.position, attackRange);
-    }
+    }*/
     void OntriggerEnter(Collider other)
     {
         if(other.tag == "Player")
