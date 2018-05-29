@@ -15,6 +15,10 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public float speed;
 
+    public bool canAttack;
+
+    public GameObject attackTrigger;
+
     public SlimeBallBehaviour slimeBall;
 
 	// Use this for initialization
@@ -53,8 +57,14 @@ public class PlayerBehaviour : MonoBehaviour {
     }
     public void Attack()
     {
-        anim.SetTrigger("Attack");
-
+        
+        if(canAttack)
+        {
+            anim.SetTrigger("Attack");
+            Debug.Log("Attacked");
+            attackTrigger.SetActive(true);
+            
+        }
         //TODO LOGIC TRIGGER APPEARS
     }
 
@@ -88,5 +98,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     }
 
-#endregion
+    #endregion
+
+
 }

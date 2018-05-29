@@ -672,17 +672,27 @@ Prefab:
       objectReference: {fileID: 797443142}
     - target: {fileID: 114795277400194002, guid: 16928bb9cc6ceda4eb86eb71dd1d1d69,
         type: 2}
+      propertyPath: pointer
+      value: 
+      objectReference: {fileID: 797443141}
+    - target: {fileID: 114795277400194002, guid: 16928bb9cc6ceda4eb86eb71dd1d1d69,
+        type: 2}
       propertyPath: slimeBall
       value: 
       objectReference: {fileID: 840520546}
     - target: {fileID: 114795277400194002, guid: 16928bb9cc6ceda4eb86eb71dd1d1d69,
         type: 2}
-      propertyPath: pointer
-      value: 
-      objectReference: {fileID: 797443141}
-    - target: {fileID: 1732415265058586, guid: 16928bb9cc6ceda4eb86eb71dd1d1d69, type: 2}
-      propertyPath: m_IsActive
+      propertyPath: canAttack
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577884058721306, guid: 16928bb9cc6ceda4eb86eb71dd1d1d69, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114195868309913956, guid: 16928bb9cc6ceda4eb86eb71dd1d1d69,
+        type: 2}
+      propertyPath: overAllTimeOff
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16928bb9cc6ceda4eb86eb71dd1d1d69, type: 2}
