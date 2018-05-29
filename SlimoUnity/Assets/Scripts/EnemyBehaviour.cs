@@ -40,6 +40,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
     public Animator anim;
     public bool walking;
+    [SerializeField] ParticleSystem particlesBlood;
 
 	// Use this for initialization
 	void Start ()
@@ -194,6 +195,7 @@ public class EnemyBehaviour : MonoBehaviour {
     }
     void SetDead()
     {
+        particlesBlood.Play();
         canAttack = false;
         agent.isStopped = true;
         state = EnemyState.Dead;
