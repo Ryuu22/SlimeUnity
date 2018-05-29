@@ -43,7 +43,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1577884058721306
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -57,7 +57,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1618011188761530
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +181,6 @@ Transform:
   m_Children:
   - {fileID: 4799243739140322}
   - {fileID: 4818519484153890}
-  - {fileID: 4736140484013816}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -217,12 +216,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1577884058721306}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 1.504476, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4197729168730126}
-  m_RootOrder: 2
+  m_Father: {fileID: 4759853920508970}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4759853920508970
 Transform:
@@ -233,7 +232,8 @@ Transform:
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 1.504476}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4736140484013816}
   m_Father: {fileID: 4980701692180230}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: -90}
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1965d9f873200ce43b7793c69a705cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overAllTimeOff: 1
+  overAllTimeOff: 0.1
   timeLeft: 0
 --- !u!114 &114795277400194002
 MonoBehaviour:
@@ -367,7 +367,7 @@ MonoBehaviour:
   savingEnergy: 0
   energyMultiplier: 200
   speed: 3
-  canAttack: 0
+  canAttack: 1
   attackTrigger: {fileID: 1577884058721306}
   slimeBall: {fileID: 0}
 --- !u!114 &114856496034114466
